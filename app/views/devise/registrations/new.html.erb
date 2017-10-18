@@ -1,0 +1,51 @@
+<h4 class="subtitle is-4">Sign Up</h4>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <%= f.text_field :name, class: 'input', placeholder: 'Name' %>
+      <span class="icon is-small is-left">
+        <i class="fa fa-user"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <%= f.email_field :email, class: 'input', placeholder: 'Email' %>
+      <span class="icon is-small is-left">
+        <i class="fa fa-envelope"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control has-icons-left">
+      <%= f.password_field :password, autocomplete: "off", class: 'input', placeholder: 'Password'%>
+      <span class="icon is-small is-left">
+        <i class="fa fa-lock"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control has-icons-left">
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input', placeholder: 'Password Confirmation' %>
+      <span class="icon is-small is-left">
+        <i class="fa fa-lock"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control">
+      <%= f.submit "Sign up", class: 'button is-success' %>
+    </p>
+    <p class="control">
+      <%= link_to "Log in", new_session_path(resource_name), class: 'button is-white' %>
+    </p>
+  </div>
+
+<% end%>

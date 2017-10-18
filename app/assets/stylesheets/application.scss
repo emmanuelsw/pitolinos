@@ -15,3 +15,11 @@
  */
 
  @import "bulma";
+
+ .margin-bot-15 {
+	 margin-bottom: 15px;
+ }
+
+ .subtitle:not(:last-child) {
+	 margin-bottom: .8rem;
+}
