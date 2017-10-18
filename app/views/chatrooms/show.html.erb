@@ -4,10 +4,13 @@
   </p>
 </div>
 
-<div data-behavior="messages" class="box">
+<div data-behavior="messages" data-chatroom-id="<%= @chatroom.id %>" class="box">
+  <% @chatroom.ordered_messages.each do |message| %>
+    <%= render message %>
+  <% end%>
 </div>
 
-<%= form_with(model: [@chatroom, Message.new]) do |f| %>
+<%= form_with(model: [@chatroom, Message.new], local: true, id: "new_message") do |f| %>
   <%= f.text_area :body, rows: 1, class: 'textarea', placeholder: 'Write a message...' %>
 <% end %>
 

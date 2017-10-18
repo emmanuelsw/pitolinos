@@ -4,6 +4,7 @@
     <title>Pitolinos Chat</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,7 +43,7 @@
     </div>
 
     <div class="container">
-      <div class="columns">
+      <div class="columns is-mobile">
         <% if user_signed_in? %>
           <div class="column is-3">
             <aside class="menu">
@@ -51,7 +52,7 @@
               </p>
               <ul class="menu-list">
                 <% current_user.chatrooms.each do |chatroom| %>
-                <li><%= link_to chatroom.name, chatroom %></li>
+                <li><%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %></li>
                 <% end %>
               </ul>
               <p class="menu-label">
@@ -62,6 +63,9 @@
                 <li><a href="">Chemita</a></li>
                 <li><a href="">Pitolino</a></li>
                 <li><a href="">Spam</a></li>
+                <li><a href="">Pedro</a></li>
+                <li><a href="">Jose</a></li>
+                <li><a href="">Pepito</a></li>
               </ul>
             </aside>
           </div>
@@ -71,6 +75,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
