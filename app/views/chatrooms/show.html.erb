@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="menu">
+  <p class="menu-label">
+    <%= @chatroom.name %>
+  </p>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chatroom.name %>
-</p>
+<div data-behavior="messages" class="box">
+</div>
 
-<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
-<%= link_to 'Back', chatrooms_path %>
+<%= form_with(model: [@chatroom, Message.new]) do |f| %>
+  <%= f.text_area :body, rows: 1, class: 'textarea', placeholder: 'Write a message...' %>
+<% end %>
+

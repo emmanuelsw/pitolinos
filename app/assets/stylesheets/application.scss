@@ -23,3 +23,8 @@
  .subtitle:not(:last-child) {
 	 margin-bottom: .8rem;
 }
+
+div[data-behavior="messages"] {
+	margin-top: 26px;
+	min-height: 70vh;
+}

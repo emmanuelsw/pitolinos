@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'chatrooms#index'
   resources :chatrooms do
     resource :chatroom_users
+    resources :messages
   end
 end

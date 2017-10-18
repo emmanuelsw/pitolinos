@@ -43,18 +43,29 @@
 
     <div class="container">
       <div class="columns">
-        <div class="column is-3">
-          <aside class="menu">
-            <p class="menu-label">
-              Chatrooms
-            </p>
-            <ul class="menu-list">
-              <% current_user.chatrooms.each do |chatroom| %>
-              <li><%= link_to chatroom.name, '#' %></li>
-              <% end %>
-            </ul>
-          </aside>
-        </div>
+        <% if user_signed_in? %>
+          <div class="column is-3">
+            <aside class="menu">
+              <p class="menu-label">
+                Chatrooms
+              </p>
+              <ul class="menu-list">
+                <% current_user.chatrooms.each do |chatroom| %>
+                <li><%= link_to chatroom.name, chatroom %></li>
+                <% end %>
+              </ul>
+              <p class="menu-label">
+                Users
+              </p>
+              <ul class="menu-list">
+                <li><a href="">EmmanuelSW</a></li>
+                <li><a href="">Chemita</a></li>
+                <li><a href="">Pitolino</a></li>
+                <li><a href="">Spam</a></li>
+              </ul>
+            </aside>
+          </div>
+        <% end%>
         <div class="column">
           <%= yield %>
         </div>
