@@ -29,7 +29,7 @@
           <div class="navbar-end">
             <% if user_signed_in? %>
               <a class="navbar-item">
-                <%= current_user.name %>
+                <%= current_user.username %>
               </a>
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'navbar-item' %>  
             <% else %>
@@ -42,7 +42,23 @@
     </div>
 
     <div class="container">
-      <%= yield %>
+      <div class="columns">
+        <div class="column is-3">
+          <aside class="menu">
+            <p class="menu-label">
+              Chatrooms
+            </p>
+            <ul class="menu-list">
+              <% current_user.chatrooms.each do |chatroom| %>
+              <li><%= link_to chatroom.name, '#' %></li>
+              <% end %>
+            </ul>
+          </aside>
+        </div>
+        <div class="column">
+          <%= yield %>
+        </div>
+      </div>
     </div>
 
   </body>
