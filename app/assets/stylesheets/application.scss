@@ -14,13 +14,34 @@
  *= require_self
  */
 
- @import "bulma";
+@import "bulma";
 
- .margin-bot-15 {
+body {
+	min-height: 100vh;
+}
+
+::-webkit-input-placeholder {
+	color: #c2c2c2;
+}
+
+.box {
+	border: 1px solid #dbdbdb;
+	box-shadow: none;
+}
+
+.input {
+	box-shadow: none;
+}
+
+.input:focus {
+	box-shadow: none;
+}
+
+.margin-bot-15 {
 	 margin-bottom: 15px;
  }
 
- .subtitle:not(:last-child) {
+.subtitle:not(:last-child) {
 	 margin-bottom: .8rem;
 }
 

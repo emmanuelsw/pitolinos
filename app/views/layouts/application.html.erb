@@ -3,7 +3,8 @@
   <head>
     <title>Pitolinos Chat</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta data-current-user="<%= current_user.id %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,8 @@
 
   <body>
     
-    <div class="container margin-bot-15">
-      <!-- <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> -->
+    <div class="container main margin-bot-15">
+
       <nav class="navbar">
         <div class="navbar-brand">
           <a class="navbar-item">
@@ -56,7 +56,7 @@
                 <% end %>
               </ul>
               <p class="menu-label">
-                Users
+                Direct Messages
               </p>
               <ul class="menu-list">
                 <li><a href="">EmmanuelSW</a></li>

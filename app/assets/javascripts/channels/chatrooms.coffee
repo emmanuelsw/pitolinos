@@ -9,6 +9,8 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
       active_chatroom.append(data.message)
     else
       $("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bold")
+    current_user = $("meta[data-current-user]").data("current-user")
+    $("[data-message-user='#{current_user}']").addClass "has-text-right"
 
   send_message: (chatroom_id, message) ->
     @perform "send_message", {chatroom_id: chatroom_id, body: message}
