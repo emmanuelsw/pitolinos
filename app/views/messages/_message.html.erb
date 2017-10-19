@@ -1,4 +1,10 @@
-<div data-message-user="<%= message.user.id %>">
-	<strong><%= message.user.username %>: </strong>
-	<%= message.body %>
+<div class="columns is-mobile">
+	<div data-message-user="<%= message.user.id %>" class="column is-4">
+		<article class="message">
+			<div class="message-body">
+				<strong style="display:block;" class="is-size-7"><%= message.user.username %></strong>
+				<div><%= message.body %></div>
+			</div>
+		</article>
+	</div>
 </div>
