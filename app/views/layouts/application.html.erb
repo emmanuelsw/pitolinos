@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pitolinos Chat | <%= current_user.username %></title>
+    <title>Pitolinos Chat <%= "| #{current_user.username if user_signed_in?}" %></title>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.png" %>
-    <meta data-current-user="<%= current_user.id %>">
+    <meta data-current-user="<%= current_user.id if user_signed_in? %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,10 +15,10 @@
   <body>
 
     <div class="primary">
-      <div class="container main margin-bot-15">
+      <div class="container margin-bot-15">
         <nav class="navbar is-primary">
           <div class="navbar-brand">
-            <a class="navbar-item">
+            <a href="<%= root_path %>" class="navbar-item">
                 <h2 class="title is-3 has-text-white">Pitolinos</h2>
             </a>
             <span class="navbar-burger burger" data-target="navbarMenu">
@@ -44,7 +44,7 @@
       </div>
     </div>
     
-    <div class="container">
+    <div class="container main">
       <div class="columns is-mobile">
         <% if user_signed_in? %>
           <div class="column is-3">

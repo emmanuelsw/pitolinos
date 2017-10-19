@@ -76,3 +76,81 @@ div[data-behavior="messages"] {
 	height: 60vh;
 	overflow: scroll;
 }
+
+@media screen and (min-width: 448px){
+	.container.main {
+		max-width:448px - 64px;
+		width: 448px - 64px;
+	}
+}
+
+@media screen and (min-width: 512px){
+	.container.main {
+		max-width:512px - 64px;
+		width: 512px - 64px;
+	}
+}
+
+@media screen and (min-width: 576px){
+	.container.main {
+		max-width: 576px - 64px;
+		width: 576px - 64px;
+	}
+}
+
+@media screen and (min-width: 640px){
+	.container.main {
+		max-width: 640px - 64px;
+		width: 640px - 64px;
+	}
+}
+
+@media screen and (min-width: 704px){
+	.container.main {
+		max-width: 704px - 64px;
+		width: 704px - 64px;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.container.main {
+		max-width: 768px - 64px;
+		width: 768px - 64px;
+	}
+}
+
+@media screen and (min-width: 832px){
+	.container.main {
+		max-width: 832px - 64px;
+		width: 832px - 64px;
+	}
+}
+
+@media screen and (min-width: 896px){
+	.container.main {
+		max-width: 896px - 64px;
+		width: 896px - 64px;
+	}
+}
+
+@media screen and (min-width: 960px){
+	.container.main {
+		max-width: 896px;
+		width: 896px;
+	}
+}
+
+@media screen and (min-width: 1024px){
+	.container.main {
+		max-width: 960px;
+		width: 960px;
+	}
+}
+
+@media screen and (min-width: 1216px){
+	.container.main {
+		max-width: 1152px;
+		width: 1152px;
+	}
+}
+
