@@ -30,10 +30,20 @@
           <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
               <% if user_signed_in? %>
-                <a class="navbar-item bold">
-                  <%= current_user.username %>
-                </a>
-                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'navbar-item bold' %>
+                <%= link_to new_chatroom_path, class: 'navbar-item ' do %>
+                  <span class="icon">
+                    <i class="fa fa-plus"></i>
+                  </span>
+                  <span class="bold">New Chatroom</span>
+                <% end%>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link bold">
+                    <%= current_user.username %>
+                  </a>
+                  <div class="navbar-dropdown">
+                    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'navbar-item bold' %>
+                  </div>
+                </div>
               <% else %>
                 <%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-item bold' %>
                 <%= link_to 'Sign In', new_user_session_path, class: 'navbar-item bold' %>
