@@ -1,9 +1,12 @@
 class ChatroomsController < ApplicationController
-  before_action :set_chatroom, only: [:update, :destroy]
+  before_action :set_chatroom, only: [:show, :update, :destroy]
 
   def index
     @joined_chatrooms = current_user.chatrooms.all
     @other_chatrooms = Chatroom.where.not(id: @joined_chatrooms.pluck(:id))
+  end
+
+  def show
   end
 
   def create
