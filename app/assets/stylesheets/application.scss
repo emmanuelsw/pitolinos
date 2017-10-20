@@ -43,13 +43,13 @@ body {
 
 .margin-bot-15 {
 	 margin-bottom: 30px;
- }
+}
 
- .bold {
+.bold {
 	 font-weight: 500;
- }
+}
 
- .message {
+.message {
 	border-radius: 50px;
 }
 
@@ -75,6 +75,10 @@ div[data-behavior="messages"] {
 	margin-top: 26px;
 	height: 60vh;
 	overflow: scroll;
+}
+
+.modal-card {
+	padding-bottom: 170px;
 }
 
 @media screen and (min-width: 448px){

@@ -3,6 +3,8 @@ class Chatroom < ApplicationRecord
 	has_many :users, through: :chatroom_users
 	has_many :messages
 
+	validates :name, presence: true
+
 	before_create :capitalize_username
 
 	def ordered_messages

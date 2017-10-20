@@ -30,12 +30,12 @@
           <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
               <% if user_signed_in? %>
-                <%= link_to new_chatroom_path, class: 'navbar-item ' do %>
+                <a class="navbar-item modal-button" data-target="modal">
                   <span class="icon">
                     <i class="fa fa-plus"></i>
                   </span>
                   <span class="bold">New Chatroom</span>
-                <% end%>
+                </a>
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link bold">
                     <%= current_user.username %>
@@ -63,8 +63,8 @@
                 Chatrooms
               </p>
               <ul class="menu-list">
-                <% current_user.chatrooms.each do |chatroom| %>
-                <li><%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %></li>
+                <% current_user.chatrooms.order(name: :desc).each do |chatroom| %>
+                  <li><%= link_to chatroom.name, chatroom, data: { behavior: "chatroom-link", chatroom_id: chatroom.id } %></li>
                 <% end %>
               </ul>
               <p class="menu-label">
@@ -85,6 +85,35 @@
         <div class="column">
           <%= yield %>
         </div>
+      </div>
+    </div>
+
+    <%# Create chatroom modal %>
+    <div id="modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Create Chatroom</p>
+          <button class="delete"></button>
+        </header>
+        <%= form_with(model: new_chatroom) do |form| %>
+          <section class="modal-card-body">
+            <div class="field">
+              <%= form.label :name, class: 'label' %>
+              <div class="control">
+                <%= form.text_field :name, id: :chatroom_name, class: 'input', placeholder: 'Chatroom name' %>
+              </div>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <%= button_tag class: 'button is-primary' do %>
+              <span class="icon">
+                <i class="fa fa-floppy-o"></i>
+              </span>
+              <span>Create</span>
+            <% end%>
+          </footer>
+        <% end %>
       </div>
     </div>
 

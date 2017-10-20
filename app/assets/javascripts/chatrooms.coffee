@@ -1,7 +1,7 @@
 $(document).on "turbolinks:load", ->
 
-  message_body = document.querySelector("[data-behavior='messages']");
-  message_body.scrollTop = message_body.scrollHeight - message_body.clientHeight;
+  message_body = document.querySelector("[data-behavior='messages']")
+  message_body.scrollTop = message_body.scrollHeight - message_body.clientHeight if message_body
 
   current_user = $("meta[data-current-user]").data("current-user")
   $("[data-message-user='#{current_user}']").addClass "is-offset-8 has-text-right"
