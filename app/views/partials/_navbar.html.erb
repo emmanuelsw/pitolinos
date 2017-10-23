@@ -1,0 +1,39 @@
+<div class="primary">
+	<div class="container margin-bot-15">
+		<nav class="navbar is-primary">
+			<div class="navbar-brand">
+				<a href="<%= root_path %>" class="navbar-item">
+						<h2 class="title is-3 has-text-white">Pitolinos</h2>
+				</a>
+				<span class="navbar-burger burger" data-target="navbarMenu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</div>
+			<div id="navbarMenu" class="navbar-menu">
+				<div class="navbar-end">
+					<% if user_signed_in? %>
+						<a class="navbar-item modal-button" data-target="modal">
+							<span class="icon">
+								<i class="fa fa-plus"></i>
+							</span>
+							<span class="bold">New Chatroom</span>
+						</a>
+						<div class="navbar-item has-dropdown is-hoverable">
+							<a class="navbar-link bold">
+								<%= current_user.username %>
+							</a>
+							<div class="navbar-dropdown">
+								<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'navbar-item bold' %>
+							</div>
+						</div>
+					<% else %>
+						<%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-item bold' %>
+						<%= link_to 'Sign In', new_user_session_path, class: 'navbar-item bold' %>
+					<% end %>
+				</div>
+			</div>
+		</nav>
+	</div>
+</div>

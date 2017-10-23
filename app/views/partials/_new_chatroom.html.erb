@@ -1,0 +1,28 @@
+<%# Create chatroom modal %>
+<div id="modal" class="modal">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<header class="modal-card-head">
+			<p class="modal-card-title">Create Chatroom</p>
+			<button class="delete"></button>
+		</header>
+		<%= form_with(model: new_chatroom) do |form| %>
+			<section class="modal-card-body">
+				<div class="field">
+					<%= form.label :name, class: 'label' %>
+					<div class="control">
+						<%= form.text_field :name, id: :chatroom_name, class: 'input', placeholder: 'Chatroom name' %>
+					</div>
+				</div>
+			</section>
+			<footer class="modal-card-foot">
+				<%= button_tag class: 'button is-primary' do %>
+					<span class="icon">
+						<i class="fa fa-floppy-o"></i>
+					</span>
+					<span>Create</span>
+				<% end%>
+			</footer>
+		<% end %>
+	</div>
+</div>
