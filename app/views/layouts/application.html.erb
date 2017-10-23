@@ -71,13 +71,9 @@
                 Direct Messages
               </p>
               <ul class="menu-list">
-                <li><a href="">EmmanuelSW</a></li>
-                <li><a href="">Chemita</a></li>
-                <li><a href="">Pitolino</a></li>
-                <li><a href="">Spam</a></li>
-                <li><a href="">Pedro</a></li>
-                <li><a href="">Jose</a></li>
-                <li><a href="">Pepito</a></li>
+                <% users.each do |user| %>
+                  <li><a href=""><%= user.username %></a></li>
+                <% end%>
               </ul>
             </aside>
           </div>
