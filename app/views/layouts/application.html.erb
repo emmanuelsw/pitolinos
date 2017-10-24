@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pitolinos Chat <%= "| #{current_user.username if user_signed_in?}" %></title>
+    <title>Pitolinos Chat <%= "| #{current_user.username}" if user_signed_in? %></title>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.png" %>
     <meta data-current-user="<%= current_user.id if user_signed_in? %>">
