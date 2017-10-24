@@ -81,6 +81,17 @@ div[data-behavior="messages"] {
 	padding-bottom: 170px;
 }
 
+.tag:not(body) {
+	border-radius: 50%;
+	height: .7em;
+	width: .7em;
+	padding-left: 0px;
+	padding-right: 0px;
+	line-height: .92;
+	align-items: normal;
+	margin-right: 3px;
+}
+
 @media screen and (min-width: 448px){
 	.container.main {
 		max-width:448px - 64px;
